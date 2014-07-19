@@ -55,6 +55,7 @@ class TodoTableViewController : UIViewController {
         
         self.alert!.addTextFieldWithConfigurationHandler({ textField in
             textField.delegate = self
+            textField.returnKeyType = .Done
         })
         
         self.presentViewController(self.alert, animated: true, completion: nil)
@@ -98,6 +99,7 @@ extension TodoTableViewController : TodoTableViewCellDelegate {
         self.alert!.addTextFieldWithConfigurationHandler({ textField in
             textField.text = self.todo[index].title
             textField.delegate = self
+            textField.returnKeyType = .Done
         })
         
         self.presentViewController(self.alert, animated: true, completion: nil)
