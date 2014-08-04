@@ -9,8 +9,8 @@
 import UIKit
 
 @objc protocol TodoTableViewCellDelegate {
-    @optional func updateTodo(index: Int)
-    @optional func removeTodo(index: Int)
+    optional func updateTodo(index: Int)
+    optional func removeTodo(index: Int)
 }
 
 class TodoTableViewCell : UITableViewCell {
