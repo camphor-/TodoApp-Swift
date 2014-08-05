@@ -18,7 +18,11 @@ class TodoTableViewCell : UITableViewCell {
     weak var delegate: TodoTableViewCellDelegate?
     var haveButtonsDisplayed = false
     
-    init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported")
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .None

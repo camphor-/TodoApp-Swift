@@ -58,7 +58,7 @@ class TodoDataManager {
     
     func create(todo: TODO!) -> Bool {
         if TodoDataManager.validate(todo) {
-            self.todoList += todo
+            self.todoList.append(todo)
             self.save()
             return true
         }
