@@ -45,7 +45,7 @@ class TodoDataManager {
     }
     
     class func validate(todo: TODO!) -> Bool {
-        return todo.title != nil && todo.title != ""
+        return todo.title != ""
     }
     
     func save() {
