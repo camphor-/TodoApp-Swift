@@ -57,7 +57,10 @@ class TodoTableViewController : UIViewController {
             textField.delegate = self
             textField.returnKeyType = .Done
         })
-        
+
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        self.alert!.addAction(okAction)
+
         self.presentViewController(self.alert, animated: true, completion: nil)
     }
 
