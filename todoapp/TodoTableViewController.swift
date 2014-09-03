@@ -61,7 +61,7 @@ class TodoTableViewController : UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         self.alert!.addAction(okAction)
 
-        self.presentViewController(self.alert, animated: true, completion: nil)
+        self.presentViewController(self.alert!, animated: true, completion: nil)
     }
 
 }
@@ -108,7 +108,7 @@ extension TodoTableViewController : TodoTableViewCellDelegate {
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         self.alert!.addAction(okAction)
 
-        self.presentViewController(self.alert, animated: true, completion: nil)
+        self.presentViewController(self.alert!, animated: true, completion: nil)
     }
     
     func removeTodo(index: Int) {
@@ -120,22 +120,22 @@ extension TodoTableViewController : TodoTableViewCellDelegate {
             self.tableView!.reloadData()
         })
         self.alert!.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        self.presentViewController(self.alert, animated: true, completion: nil)
+        self.presentViewController(self.alert!, animated: true, completion: nil)
     }
 }
 
 extension TodoTableViewController : UITableViewDataSource {
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.todo.size
     }
 
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = TodoTableViewCell(style: .Default, reuseIdentifier: nil)
         cell.delegate = self
         
-        cell.textLabel.text = self.todo[indexPath.row].title
+        cell.textLabel?.text = self.todo[indexPath.row].title
         cell.tag = indexPath.row
         
         return cell

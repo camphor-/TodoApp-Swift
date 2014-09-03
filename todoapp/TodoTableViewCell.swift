@@ -57,8 +57,8 @@ class TodoTableViewCell : UITableViewCell {
         removeButton.addTarget(self, action: "removeTodo", forControlEvents: .TouchUpInside)
         
         self.backgroundView = UIView(frame: self.bounds)
-        self.backgroundView.addSubview(updateButton)
-        self.backgroundView.addSubview(removeButton)
+        self.backgroundView?.addSubview(updateButton)
+        self.backgroundView?.addSubview(removeButton)
     }
     
     func updateTodo() {
