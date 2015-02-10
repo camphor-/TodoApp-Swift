@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 enum TodoAlertViewType {
     case Create, Update(Int), Remove(Int)
 }

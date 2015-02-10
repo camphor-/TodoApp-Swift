@@ -54,6 +54,7 @@ class TodoDataManager {
             todo.title
         }
         defaults.setObject(data, forKey: self.STORE_KEY)
+        defaults.synchronize()
     }
     
     func create(todo: TODO!) -> Bool {
@@ -66,7 +67,7 @@ class TodoDataManager {
     }
     
     func update(todo: TODO!, at index: Int) -> Bool {
-        if(index >= self.todoList.count) {
+        if (index >= self.todoList.count) {
             return false
         }
         
@@ -79,7 +80,7 @@ class TodoDataManager {
     }
     
     func remove(index: Int) -> Bool {
-        if(index >= self.todoList.count) {
+        if (index >= self.todoList.count) {
             return false
         }
         

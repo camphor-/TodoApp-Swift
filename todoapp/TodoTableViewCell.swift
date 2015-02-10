@@ -14,7 +14,6 @@ import UIKit
 }
 
 class TodoTableViewCell : UITableViewCell {
-    
     weak var delegate: TodoTableViewCellDelegate?
     var haveButtonsDisplayed = false
     
