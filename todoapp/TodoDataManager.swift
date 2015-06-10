@@ -13,16 +13,10 @@ struct TODO {
 }
 
 class TodoDataManager {
-    
     let STORE_KEY = "TodoDataManager.store_key"
-    
-    class var sharedInstance : TodoDataManager {
-        struct Static {
-            static let instance : TodoDataManager = TodoDataManager()
-        }
-        return Static.instance
-    }
-    
+
+    static let sharedInstance = TodoDataManager()
+
     var todoList: [TODO]
     
     var size : Int {
@@ -33,7 +27,7 @@ class TodoDataManager {
         return todoList[index]
     }
 
-    init() {
+    private init() {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let data = defaults.objectForKey(self.STORE_KEY) as? [String] {
             self.todoList = data.map { title in

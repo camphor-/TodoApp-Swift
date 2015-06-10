@@ -32,7 +32,7 @@ class TodoTableViewController : UIViewController {
         title.text = "Todoリスト🐶🐮"
         header.addSubview(title)
         
-        let button = UIButton.buttonWithType(.System) as UIButton
+        let button = UIButton.buttonWithType(.System) as! UIButton
         button.frame = CGRect(x: 320 - 50, y: 20, width: 50, height: 44)
         button.setTitle("追加", forState: .Normal)
         button.addTarget(self, action:"showCreateView", forControlEvents: .TouchUpInside)
@@ -66,7 +66,7 @@ class TodoTableViewController : UIViewController {
 }
 
 extension TodoTableViewController : UITextFieldDelegate {
-    func textFieldShouldEndEditing(textField: UITextField!) -> Bool {
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         
         if let type = self.alertType {
             switch type {
